@@ -36,6 +36,8 @@ public class Main {
                 System.out.println("YOU WIN");
                 System.out.println("CONGRATS YOU HAVE FOUND THE TREASURE!");
                 gameFinished = true;
+            } else {
+                System.out.println("\nDistance to treasure: " + game.getDistanceToTreasure());
             }
         }
 
