@@ -57,4 +57,13 @@ public class TestGameCases {
         assertFalse(game.getTreasureLoc()[0] == game.getCurrentLoc()[0] && game.getTreasureLoc()[1] == game.getCurrentLoc()[1]);
     }
 
+    @Test
+    public void testDistanceToTreasure() {
+        game.setCurrentLoc(new int[]{3, 2});
+        game.setTreasureLoc(new int[]{2, 1});
+        int expectedResult = 2;
+        int actualResult = game.getDistanceToTreasure();
+        assertEquals(expectedResult, actualResult);
+    }
+
 }

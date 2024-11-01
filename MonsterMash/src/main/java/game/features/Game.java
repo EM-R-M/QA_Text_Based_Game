@@ -32,6 +32,13 @@ public class Game {
         }
     }
 
+    public int getDistanceToTreasure(){
+        int verticalMoves = Math.abs(currentLoc[0] - treasureLoc[0]);
+        int horizontalMoves = Math.abs(currentLoc[1] - treasureLoc[1]);
+        // Add them together to get the total moves
+        return verticalMoves + horizontalMoves;
+    }
+
     // Getters and setters
     public int[] getGrid() {
         return grid;
@@ -51,4 +58,5 @@ public class Game {
     public void setTreasureLoc(int[] treasureLoc) {
         this.treasureLoc = treasureLoc;
     }
+
 }
