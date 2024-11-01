@@ -1,4 +1,5 @@
 import game.features.Game;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -64,6 +65,49 @@ public class TestGameCases {
         int expectedResult = 2;
         int actualResult = game.getDistanceToTreasure();
         assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void testUp() {
+        game.createGrid(4, 4);
+        game.setCurrentLoc(new int[]{3, 2});
+        game.makeMove("up");
+        int[] expectedLocation = new int[]{4, 2};
+        assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
+    }
+
+    @Test
+    public void testDown() {
+        game.createGrid(4, 4);
+        game.setCurrentLoc(new int[]{3, 2});
+        game.makeMove("DOWN");
+        int[] expectedLocation = new int[]{2, 2};
+        assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
+    }
+
+    @Test
+    public void testLeft() {
+        game.createGrid(4, 4);
+        game.setCurrentLoc(new int[]{3, 2});
+        game.makeMove("Left");
+        int[] expectedLocation = new int[]{3, 1};
+        assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
+    }
+
+    @Test
+    public void testRight() {
+        game.createGrid(4, 4);
+        game.setCurrentLoc(new int[]{3, 2});
+        game.makeMove("rigHT");
+        int[] expectedLocation = new int[]{3, 3};
+        assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
+    }
+
+    @Disabled
+    @Test
+    public void testInvalidMove() {
+        game.setCurrentLoc(new int[]{3, 2});
+
     }
 
 }

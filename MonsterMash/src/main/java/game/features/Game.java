@@ -39,6 +39,23 @@ public class Game {
         return verticalMoves + horizontalMoves;
     }
 
+    public void makeMove(String userInput) {
+        switch(userInput.toLowerCase()) {
+            case "up":
+                currentLoc[0] += 1;
+                break;
+            case "down":
+                currentLoc[0] -= 1;
+                break;
+            case "left":
+                currentLoc[1] -= 1;
+                break;
+            case "right":
+                currentLoc[1] += 1;
+                break;
+        }
+    }
+
     // Getters and setters
     public int[] getGrid() {
         return grid;
