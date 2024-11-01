@@ -27,4 +27,20 @@ public class TestGameCases {
         game.startLocation();
         assertTrue(game.getCurrentLoc()[0] >= 0 && game.getCurrentLoc()[0] < 3 && game.getCurrentLoc()[1] >= 0 && game.getCurrentLoc()[1] < 3);
     }
+
+    @Test
+    public void testPlaceTreasureInBounds() {
+        game.createGrid(4, 4);
+        game.startLocation();
+        game.placeTreasure();
+        assertTrue(game.getTreasureLoc()[0] >= 0 && game.getTreasureLoc()[0] < 4 && game.getTreasureLoc()[1] >= 0 && game.getTreasureLoc()[1] < 4);
+    }
+
+    @Test
+    public void testTreasureNotInStartLoc() {
+        game.createGrid(4, 4);
+        game.startLocation();
+        game.placeTreasure();
+        assertTrue(game.getTreasureLoc()[0] != game.getCurrentLoc()[0] && game.getTreasureLoc()[1] != game.getCurrentLoc()[1]);
+    }
 }
