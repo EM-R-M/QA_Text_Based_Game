@@ -72,7 +72,7 @@ public class TestGameCases {
         game.createGrid(4, 4);
         game.setCurrentLoc(new int[]{3, 2});
         game.makeMove("up");
-        int[] expectedLocation = new int[]{4, 2};
+        int[] expectedLocation = new int[]{2, 2};
         assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
     }
 
@@ -81,7 +81,7 @@ public class TestGameCases {
         game.createGrid(4, 4);
         game.setCurrentLoc(new int[]{3, 2});
         game.makeMove("DOWN");
-        int[] expectedLocation = new int[]{2, 2};
+        int[] expectedLocation = new int[]{4, 2};
         assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
     }
 

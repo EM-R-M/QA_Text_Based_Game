@@ -42,10 +42,10 @@ public class Game {
     public void makeMove(String userInput) {
         switch(userInput.toLowerCase()) {
             case "up":
-                currentLoc[0] += 1;
+                currentLoc[0] -= 1;
                 break;
             case "down":
-                currentLoc[0] -= 1;
+                currentLoc[0] += 1;
                 break;
             case "left":
                 currentLoc[1] -= 1;
