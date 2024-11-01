@@ -1,4 +1,4 @@
-import game.features.Game;
+import game.features.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -103,11 +103,34 @@ public class TestGameCases {
         assertTrue(expectedLocation[0] == game.getCurrentLoc()[0] && expectedLocation[1] == game.getCurrentLoc()[1]);
     }
 
+    @Test
+    public void testCreateWerewolf() {
+        game.createGrid(3, 3);
+        Werewolf monster1 = new Werewolf(game.getGrid());
+
+        assertEquals("werewolf", monster1.getMonsterType());
+    }
+
+    @Test
+    public void testCreateVampire() {
+        game.createGrid(3, 3);
+        Vampire monster2 = new Vampire(game.getGrid());
+
+        assertEquals("vampire", monster2.getMonsterType());
+    }
+
+    @Test
+    public void testCreateZombie() {
+        game.createGrid(3, 3);
+        Zombie monster3 = new Zombie(game.getGrid());
+
+        assertEquals("zombie", monster3.getMonsterType());
+    }
+
     @Disabled
     @Test
     public void testInvalidMove() {
         game.setCurrentLoc(new int[]{3, 2});
-
     }
 
 }
