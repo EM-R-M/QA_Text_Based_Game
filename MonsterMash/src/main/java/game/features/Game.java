@@ -40,8 +40,15 @@ public class Game {
     public int[] getCurrentLoc() {
         return currentLoc;
     }
+    public void setCurrentLoc(int[] currentLoc) {
+        this.currentLoc = currentLoc;
+    }
 
     public int[] getTreasureLoc() {
         return treasureLoc;
+    }
+
+    public void setTreasureLoc(int[] treasureLoc) {
+        this.treasureLoc = treasureLoc;
     }
 }

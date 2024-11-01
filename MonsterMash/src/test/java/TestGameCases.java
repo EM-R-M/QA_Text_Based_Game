@@ -1,8 +1,7 @@
 import game.features.Game;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestGameCases {
 
@@ -43,4 +42,19 @@ public class TestGameCases {
         game.placeTreasure();
         assertTrue(game.getTreasureLoc()[0] != game.getCurrentLoc()[0] && game.getTreasureLoc()[1] != game.getCurrentLoc()[1]);
     }
+
+    @Test
+    public void testWinCondition() {
+        game.setCurrentLoc(new int[]{2, 2});
+        game.setTreasureLoc(new int[]{2, 2});
+        assertTrue(game.getTreasureLoc()[0] == game.getCurrentLoc()[0] && game.getTreasureLoc()[1] == game.getCurrentLoc()[1]);
+    }
+
+    @Test
+    public void testNotWinCondition() {
+        game.setCurrentLoc(new int[]{3, 2});
+        game.setTreasureLoc(new int[]{2, 1});
+        assertFalse(game.getTreasureLoc()[0] == game.getCurrentLoc()[0] && game.getTreasureLoc()[1] == game.getCurrentLoc()[1]);
+    }
+
 }
