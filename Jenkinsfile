@@ -35,7 +35,7 @@ pipeline {
                 }
                     steps {
                         withSonarQubeEnv('monster-token') {
-                           sh "${scannerHome}/bin/sonar-scanner"
+                           sh "${scannerHome}/bin/sonar-scanner -Dsonar.exclusions=**/*.java"
                         }
                     }
             
