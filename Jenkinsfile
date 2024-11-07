@@ -34,7 +34,7 @@ pipeline {
                     scannerHome = tool 'sonarqube'
                 }
                     steps {
-                        withSonarQubeEnv('monster-token') {
+                        withSonarQubeEnv('monster-game') {
                            sh "/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner"
                         }
                     }
