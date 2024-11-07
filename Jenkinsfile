@@ -34,7 +34,7 @@ pipeline {
                     scannerHome = tool 'sonarqube'
                 }
                     steps {
-                        withSonarQubeEnv('monster-token') {
+                        withSonarQubeEnv('sonar-qube-1') {
                            sh "${scannerHome}/bin/sonar-scanner"
                         }
                     }
